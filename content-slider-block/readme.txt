@@ -1,10 +1,10 @@
-=== Content Slider Block - Create fully functional slider with Gutenberg block ===
+=== Content Slider Block ===
 Contributors: bplugins, abuhayat, charlescormier, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, carousel slider, image slider, image carousel, content carousel
 Requires at least: 6.2+
 Tested up to: 6.6.2
-Stable tag: 3.1.4
+Stable tag: 3.1.5
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,6 +74,8 @@ With Pro features like advanced border styles, device-specific controls, and sho
 
 
 ### Content Slider Block Pro Features
+- **Sortable:** Sort the slides.
+
 - **Border:** Border style options in every single slide.
 
 - **Delay time:** Delay time option in autoplay.
@@ -203,6 +205,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 3.1.5 - 30 Oct 2024 =
+* Sortable
+
 = 3.1.4 - 31 Jan 2024 =
 * Performance improvement
 * Fix issue.
@@ -236,75 +241,6 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 = 3.0.4 =
 * Library update
-
-= 3.0.3 =
-* Fix CSS issue
-
-= 3.0.2 =
-* Fix column gap
-* Add option for link target (self or new tab)
-
-= 3.0.1 =
-* Performance upgrade
-
-= 3.0.0 =
-* Content draggable
-
-= 2.0.2 =
-* Bug Fixing
-* Performance upgrade
-
-= 2.0.1 =
-* Performance upgrade
-
-= 2.0.0 =
-* Separate options for slide text and button colors
-
-= 1.0.3 =
-* Sanitizes content
-
-= 1.0.2 =
-* Fix Issues
-
-= 1.0.1 =
-* Slider Alignment fix
-
-= 1.0.0 =
-* Initial Release
-
-
-== Upgrade Notice ==
-
-= 3.1.4 - 31 Jan 2024 =
-* Performance improvement
-* Fix issue.
-
-= 3.1.3 - 23 Sep 2023 =
-* Update SDK.
-
-= 3.1.2 =
-* Update SDK
-
-= 3.1.1 =
-* Fix the height
-
-= 3.1.0 =
-* Combined with the pro.
-
-= 3.0.9 =
-* Fix free-pro activation conflict.
-
-= 3.0.8 =
-* Fix for the reusable block.
-
-= 3.0.7 =
-* Add translate feature
-
-= 3.0.6 =
-* Fix content position in smaller devices
-
-= 3.0.5 =
-* Fix Button Link Issue
 
 = 3.0.3 =
 * Fix CSS issue

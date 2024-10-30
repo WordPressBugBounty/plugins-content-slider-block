@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Content Slider Block
  * Description: Display your goal to your visitor in bountiful way with content slider block.
- * Version: 3.1.4
+ * Version: 3.1.5
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -24,7 +24,7 @@ if ( function_exists( 'csb_fs' ) || function_exists( 'csb_init' ) ) {
 	} );
 }else{
 	// Constant
-	define( 'CSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.1.4' );
+	define( 'CSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.1.5' );
 	define( 'CSB_DIR_URL', plugin_dir_url( __FILE__ ) );
 	define( 'CSB_DIR_PATH', plugin_dir_path( __FILE__ ) );
 	define( 'CSB_HAS_FREE', 'content-slider-block/plugin.php' === plugin_basename( __FILE__ ) );
@@ -44,7 +44,7 @@ if ( function_exists( 'csb_fs' ) || function_exists( 'csb_init' ) ) {
 	}
 
 	if ( CSB_HAS_PRO ) {
-		require_once CSB_DIR_PATH . 'inc/fs-init.php';
+		require_once CSB_DIR_PATH . 'includes/fs-init.php';
 
 		if( function_exists( 'csb_fs' ) ){
 			csb_fs()->set_basename( false, __FILE__ );
@@ -62,13 +62,12 @@ if ( function_exists( 'csb_fs' ) || function_exists( 'csb_init' ) ) {
 		}
 	}
 
-	require_once CSB_DIR_PATH . 'inc/block.php';
-	require_once CSB_DIR_PATH . 'inc/CustomPost.php';
-	require_once CSB_DIR_PATH . 'inc/pattern.php';
-	require_once CSB_DIR_PATH . 'inc/HelpPage.php';
+	require_once CSB_DIR_PATH . 'includes/CustomPost.php';
+	require_once CSB_DIR_PATH . 'includes/pattern.php';
+	require_once CSB_DIR_PATH . 'includes/HelpPage.php';
 
 	if( CSB_HAS_FREE && !csbIsPremium() ){
-		require_once CSB_DIR_PATH . 'inc/UpgradePage.php';
+		require_once CSB_DIR_PATH . 'includes/UpgradePage.php';
 	}
 
 	if( CSB_HAS_FREE ){
@@ -89,12 +88,17 @@ if ( function_exists( 'csb_fs' ) || function_exists( 'csb_init' ) ) {
 	// Content Slider
 	class CSBPlugin{
 		function __construct(){
+			add_action( 'init', [ $this, 'onInit' ] );
 			add_action( 'wp_ajax_csbPipeChecker', [$this, 'csbPipeChecker'] );
 			add_action( 'wp_ajax_nopriv_csbPipeChecker', [$this, 'csbPipeChecker'] );
 			add_action( 'admin_init', [$this, 'registerSettings'] );
 			add_action( 'rest_api_init', [$this, 'registerSettings']);
 
 			add_filter( 'block_categories_all', [$this, 'blockCategories'] );
+		}
+
+		function onInit(){
+			register_block_type( __DIR__ . '/build' );
 		}
 
 		function csbPipeChecker(){
