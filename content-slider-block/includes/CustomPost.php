@@ -48,20 +48,48 @@ class CSBCustomPost{
 			'rewrite'				=> [ 'slug' => 'csb' ],
 			'supports'				=> [ 'title', 'editor' ],
 			'template'				=> [ ['csb/content-slider-block'] ],
-			'template_lock'			=> 'all',
+			'template_lock'			=> 'all'
 		]); // Register Post Type
 	}
 
 	function onAddShortcode( $atts ) {
 		$post_id = $atts['id'];
-
 		$post = get_post( $post_id );
+
+		if ( !$post ) {
+			return '';
+		}
+
+		if ( post_password_required( $post ) ) {
+			return get_the_password_form( $post );
+		}
+
+		switch ( $post->post_status ) {
+			case 'publish':
+				return $this->displayContent( $post );
+
+			case 'private':
+				if (current_user_can('read_private_posts')) {
+					return $this->displayContent( $post );
+				}
+				return '';
+
+			case 'draft':
+			case 'pending':
+			case 'future':
+				if ( current_user_can( 'edit_post', $post_id ) ) {
+					return $this->displayContent( $post );
+				}
+				return '';
+
+			default:
+				return '';
+		}
+	}
+
+	function displayContent( $post ){
 		$blocks = parse_blocks( $post->post_content );
-
-		ob_start();
-		echo render_block($blocks[0]);
-
-		return ob_get_clean();
+		return render_block( $blocks[0] );
 	}
 
 	function manageCSBPostsColumns( $defaults ) {
@@ -90,7 +118,7 @@ class CSBCustomPost{
 	function orderSubMenu( $menu_ord ){
 		global $submenu;
 
-		$sMenu = $submenu['edit.php?post_type=csb'];
+		$sMenu = $submenu['edit.php?post_type=csb'] ?? [];
 		$arr = [];
 		if( csbIsPremium() ){
 			if( isset( $sMenu[5] ) ){
