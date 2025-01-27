@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Content Slider Block
  * Description: Display your goal to your visitor in bountiful way with content slider block.
- * Version: 3.1.6
+ * Version: 3.1.7
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -24,7 +24,7 @@ if ( function_exists( 'csb_fs' ) || function_exists( 'csb_init' ) ) {
 	} );
 }else{
 	// Constant
-	define( 'CSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.1.6' );
+	define( 'CSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.1.7' );
 	define( 'CSB_DIR_URL', plugin_dir_url( __FILE__ ) );
 	define( 'CSB_DIR_PATH', plugin_dir_path( __FILE__ ) );
 	define( 'CSB_HAS_FREE', 'content-slider-block/plugin.php' === plugin_basename( __FILE__ ) );

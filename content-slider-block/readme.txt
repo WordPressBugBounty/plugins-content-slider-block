@@ -2,9 +2,9 @@
 Contributors: bplugins, abuhayat, charlescormier, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, carousel slider, image slider, image carousel, content carousel
-Requires at least: 6.2+
-Tested up to: 6.6.2
-Stable tag: 3.1.6
+Requires at least: 6.5+
+Tested up to: 6.7.1
+Stable tag: 3.1.7
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -205,6 +205,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 3.1.7 - 27 Jan 2025 =
+* Update SDK.
+
 = 3.1.6 - 2 Nov 2024 =
 * Fix ShortCode Issue
 
@@ -278,4 +281,4 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 * Slider Alignment fix
 
 = 1.0.0 =
-* Initial Release
+* Initial Release.
