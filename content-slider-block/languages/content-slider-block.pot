@@ -2,31 +2,35 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Content Slider Block 3.1.7\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/content-slider-block-pro\n"
+"Project-Id-Version: Content Slider Block 3.1.8\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/content-slider-block\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-27T16:54:40+00:00\n"
+"POT-Creation-Date: 2025-05-05T12:01:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.8.1\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: content-slider-block\n"
 
 #. Plugin Name of the plugin
+#: plugin.php
 msgid "Content Slider Block"
 msgstr ""
 
 #. Description of the plugin
+#: plugin.php
 msgid "Display your goal to your visitor in bountiful way with content slider block."
 msgstr ""
 
 #. Author of the plugin
+#: plugin.php
 msgid "bPlugins"
 msgstr ""
 
 #. Author URI of the plugin
+#: plugin.php
 msgid "https://bplugins.com"
 msgstr ""
 
