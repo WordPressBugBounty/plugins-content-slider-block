@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Content Slider Block
  * Description: Display your goal to your visitor in bountiful way with content slider block.
- * Version: 3.1.8
+ * Version: 3.1.9
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -13,116 +13,39 @@
 // ABS PATH
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
-if ( function_exists( 'csb_fs' ) || function_exists( 'csb_init' ) ) {
-	register_activation_hook( __FILE__, function () {
-		if ( is_plugin_active( 'content-slider-block/plugin.php' ) ){
-			deactivate_plugins( 'content-slider-block/plugin.php' );
-		}
-		if ( is_plugin_active( 'content-slider-block-pro/plugin.php' ) ){
-			deactivate_plugins( 'content-slider-block-pro/plugin.php' );
-		}
-	} );
+if ( function_exists( 'csb_fs' ) ) {
+    csb_fs()->set_basename( false, __FILE__ );
 }else{
 	// Constant
-	define( 'CSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.1.8' );
+	define( 'CSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && ( 'localhost' === $_SERVER['HTTP_HOST'] || 'plugins.local' === $_SERVER['HTTP_HOST'] ) ? time() : '3.1.9' );
 	define( 'CSB_DIR_URL', plugin_dir_url( __FILE__ ) );
 	define( 'CSB_DIR_PATH', plugin_dir_path( __FILE__ ) );
-	define( 'CSB_HAS_FREE', 'content-slider-block/plugin.php' === plugin_basename( __FILE__ ) );
-	define( 'CSB_HAS_PRO', 'content-slider-block-pro/plugin.php' === plugin_basename( __FILE__ ) );
-
-	if( CSB_HAS_FREE ){
-		if( !function_exists( 'csb_init' ) ) {
-			function csb_init() {
-				global $csb_bs;
-				require_once( CSB_DIR_PATH . 'bplugins_sdk/init.php' );
-				$csb_bs = new BPlugins_SDK( __FILE__ );
-			}
-			csb_init();
-		}else {
-			$csb_bs->uninstall_plugin( __FILE__ );
-		}
-	}
+	define( 'CSB_HAS_PRO', file_exists( CSB_DIR_PATH . 'vendor/freemius/start.php' ) );
 
 	if ( CSB_HAS_PRO ) {
-		require_once CSB_DIR_PATH . 'includes/fs-init.php';
-
-		if( function_exists( 'csb_fs' ) ){
-			csb_fs()->set_basename( false, __FILE__ );
-		}
+		require_once CSB_DIR_PATH . 'includes/fs.php';
+		require_once CSB_DIR_PATH . 'includes/admin/CPT.php';
+	}else{
+		require_once CSB_DIR_PATH . 'includes/fs-lite.php';
+		require_once CSB_DIR_PATH . 'includes/admin/SubMenu.php';
 	}
+
+	require_once CSB_DIR_PATH . 'includes/Patterns.php';
 
 	function csbIsPremium(){
-		if( CSB_HAS_FREE ){
-			global $csb_bs;
-			return $csb_bs->can_use_premium_feature();
-		}
-
-		if ( CSB_HAS_PRO ) {
-			return csb_fs()->can_use_premium_code();
-		}
+		return CSB_HAS_PRO ? csb_fs()->can_use_premium_code() : false;
 	}
 
-	require_once CSB_DIR_PATH . 'includes/CustomPost.php';
-	require_once CSB_DIR_PATH . 'includes/pattern.php';
-	require_once CSB_DIR_PATH . 'includes/HelpPage.php';
-
-	if( CSB_HAS_FREE && !csbIsPremium() ){
-		require_once CSB_DIR_PATH . 'includes/UpgradePage.php';
-	}
-
-	if( CSB_HAS_FREE ){
-		// disable update for old gumroad pro users 
-		add_filter('site_transient_update_plugins', 'csb_remove_update_notification_1234');
-		function csb_remove_update_notification_1234( $value ) {
-			// replace is_gumroad_pro_user with proper pro user checker method
-			if( csbIsPremium() || get_option('csb_user_type') === 'pro'){ 
-				update_option('csb_user_type', 'pro');
-				unset( $value->response[ plugin_basename(__FILE__) ] ); 
-				// plugin_basename(__FILE__) should be slug/main_file.php if the code is not used in the main file
-				return $value;
-			}
-			return $value;
-		}
-	}
-
-	// Content Slider
 	class CSBPlugin{
 		function __construct(){
 			add_action( 'init', [ $this, 'onInit' ] );
-			add_action( 'wp_ajax_csbPipeChecker', [$this, 'csbPipeChecker'] );
-			add_action( 'wp_ajax_nopriv_csbPipeChecker', [$this, 'csbPipeChecker'] );
-			add_action( 'admin_init', [$this, 'registerSettings'] );
-			add_action( 'rest_api_init', [$this, 'registerSettings']);
-
 			add_filter( 'block_categories_all', [$this, 'blockCategories'] );
+			add_action( 'admin_enqueue_scripts', [ $this, 'adminEnqueueScripts' ] );
+			add_action( 'enqueue_block_editor_assets', [$this, 'enqueueBlockEditorAssets'] );
 		}
 
 		function onInit(){
 			register_block_type( __DIR__ . '/build' );
-		}
-
-		function csbPipeChecker(){
-			$nonce = $_POST['_wpnonce'] ?? null;
-
-			if( !wp_verify_nonce( $nonce, 'wp_ajax' )){
-				wp_send_json_error( 'Invalid Request' );
-			}
-
-			wp_send_json_success( [
-				'isPipe' => csbIsPremium()
-			] );
-		}
-
-		function registerSettings(){
-			register_setting( 'csbUtils', 'csbUtils', [
-				'show_in_rest'		=> [
-					'name'			=> 'csbUtils',
-					'schema'		=> [ 'type' => 'string' ]
-				],
-				'type'				=> 'string',
-				'default'			=> wp_json_encode( [ 'nonce' => wp_create_nonce( 'wp_ajax' ) ] ),
-				'sanitize_callback'	=> 'sanitize_text_field'
-			] );
 		}
 
 		function blockCategories( $categories ){
@@ -131,6 +54,29 @@ if ( function_exists( 'csb_fs' ) || function_exists( 'csb_init' ) ) {
 				'title'	=> 'Content Slider Block',
 			] ], $categories );
 		} // Categories
+
+		function adminEnqueueScripts( $hook ) {
+			if( strpos( $hook, 'content-slider-block' ) ){
+				wp_enqueue_style( 'csb-admin-dashboard', CSB_DIR_URL . 'build/admin/dashboard.css', [], CSB_VERSION );
+				wp_enqueue_script( 'csb-admin-dashboard', CSB_DIR_URL . 'build/admin/dashboard.js', [ 'react', 'react-dom' ], CSB_VERSION, true );
+				wp_set_script_translations( 'csb-admin-dashboard', 'content-slider-block', CSB_DIR_PATH . 'languages' );
+			}
+		}
+
+		function enqueueBlockEditorAssets(){
+			wp_add_inline_script( 'csb-content-slider-block-editor-script', 'const csbpipecheck = ' . wp_json_encode( csbIsPremium() ) .'; const csbpricingurl = "'. admin_url( CSB_HAS_PRO ? 'edit.php?post_type=csb&page=content-slider-block#/pricing' : 'tools.php?page=content-slider-block#/pricing' ) .'";', 'before' );
+		}
+
+		static function renderDashboard(){ ?>
+			<div
+				id='csbDashboard'
+				data-info='<?php echo esc_attr( wp_json_encode( [
+					'version'	=> CSB_VERSION,
+					'isPremium'	=> csbIsPremium(),
+					'hasPro'	=> CSB_HAS_PRO
+				] ) ); ?>'
+			></div>
+		<?php }
 	}
 	new CSBPlugin;
 }

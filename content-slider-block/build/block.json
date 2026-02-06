@@ -4,6 +4,7 @@
   "title": "Content Slider",
   "description": "Display slider in a beautiful way.",
   "category": "CSBlock",
+  "version": "3.1.9",
   "keywords": [
     "carousel slider",
     "content carousel",
@@ -52,11 +53,11 @@
           "btnLink": "#",
           "btnColors": {
             "color": "#fff",
-            "bg": "#4527a4"
+            "bg": "#146EF5"
           },
           "btnHovColors": {
             "color": "#fff",
-            "bg": "#8344c5"
+            "bg": "#FF7A00"
           }
         },
         {
@@ -93,11 +94,11 @@
           "btnLink": "#",
           "btnColors": {
             "color": "#fff",
-            "bg": "#4527a4"
+            "bg": "#146EF5"
           },
           "btnHovColors": {
             "color": "#fff",
-            "bg": "#8344c5"
+            "bg": "#FF7A00"
           }
         }
       ]
@@ -246,9 +247,9 @@
       "type": "object",
       "default": {
         "fontSize": {
-          "desktop": 25,
-          "tablet": 22,
-          "mobile": 20
+          "desktop": "25px",
+          "tablet": "22px",
+          "mobile": "20px"
         }
       }
     },
@@ -260,11 +261,13 @@
       "type": "object",
       "default": {
         "fontSize": {
-          "desktop": 15,
-          "tablet": 15,
-          "mobile": 15
+          "desktop": "15px"
         }
       }
+    },
+    "descColor": {
+      "type": "string",
+      "default": ""
     },
     "isBtn": {
       "type": "boolean",
@@ -278,9 +281,7 @@
       "type": "object",
       "default": {
         "fontSize": {
-          "desktop": 16,
-          "tablet": 16,
-          "mobile": 16
+          "desktop": "16px"
         }
       }
     },
