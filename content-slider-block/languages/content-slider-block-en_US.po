@@ -1,15 +1,15 @@
-# Copyright (C) 2025 bPlugins
+# Copyright (C) 2026 bPlugins
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Content Slider Block 3.1.9\n"
+"Project-Id-Version: Content Slider Block 3.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/content-slider-block\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-27T12:41:55+00:00\n"
+"POT-Creation-Date: 2026-03-04T17:40:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: content-slider-block\n"
@@ -39,6 +39,7 @@ msgid "Help & Demos - Content Slider"
 msgstr ""
 
 #: includes/admin/CPT.php:24
+#: plugin.php:82
 msgid "Help & Demos"
 msgstr ""
 
@@ -76,6 +77,26 @@ msgstr ""
 
 #: includes/admin/SubMenu.php:14
 msgid "Content Slider - bPlugins"
+msgstr ""
+
+#: build/admin/dashboard.js:1
+msgid "Sort your slides easily with sortable feature."
+msgstr ""
+
+#: build/admin/dashboard.js:1
+msgid "Add custom border styles to every slide."
+msgstr ""
+
+#: build/admin/dashboard.js:1
+msgid "Advanced autoplay with delay and interaction settings."
+msgstr ""
+
+#: build/admin/dashboard.js:1
+msgid "Stunning effects like Cube, Coverflow and Flip."
+msgstr ""
+
+#: build/admin/dashboard.js:1
+msgid "Enable free mode, sticky and keyboard control."
 msgstr ""
 
 #: build/block.json

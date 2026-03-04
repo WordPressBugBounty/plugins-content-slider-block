@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, carousel slider, image slider, image carousel, content carousel
 Requires at least: 6.5+
 Tested up to: 6.9
-Stable tag: 3.1.9
+Stable tag: 3.2.0
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -205,9 +205,12 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 3.2.0 - 04 Feb 2026 =
+* **Update:** Admin Dashboard - Improved UI with better navigation and clearer feature organization.
+
 = 3.1.9 - 27 Nov 2025 =
-* Update Admin Dashboard.
-* Update SDK.
+* **Update:** Admin Dashboard.
+* **Update:** SDK.
 
 = 3.1.8 - 5 May 2025 =
 * Fix textdomain issue.
