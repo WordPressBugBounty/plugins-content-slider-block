@@ -1,9 +1,10 @@
 {
-  "apiVersion": 2,
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
   "name": "csb/content-slider-block",
   "title": "Content Slider",
   "description": "Display slider in a beautiful way.",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "category": "CSBlock",
   "keywords": [
     "carousel slider",
@@ -319,7 +320,7 @@
   "editorScript": [
     "file:./index.js",
     "jquery",
-    "jquery-ui-droppable",
+    "jquery-ui-draggable",
     "wp-api"
   ],
   "editorStyle": "file:./index.css",

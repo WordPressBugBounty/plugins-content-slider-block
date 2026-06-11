@@ -2,6 +2,12 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 if ( ! function_exists( 'csb_fs' ) ) {
+	/**
+	 * Initializes or returns the Freemius Lite integration instance for the plugin.
+	 *
+	 * @since 1.0.0
+	 * @return Freemius The Freemius instance.
+	 */
 	function csb_fs() {
 		global $csb_fs;
 
@@ -16,18 +22,12 @@ if ( ! function_exists( 'csb_fs' ) ) {
 				'type'					=> 'plugin',
 				'public_key'			=> 'pk_9c4ec15b2a1340392c3932bd66c9e',
 				'is_premium'			=> false,
-				'premium_suffix'		=> 'Pro',
-				'has_premium_version'	=> true,
-				'has_addons'			=> false,
-				'has_paid_plans'		=> true,
 				'menu'					=> [
 					'slug'			=> 'content-slider-block',
 					'first-path'	=> 'tools.php?page=content-slider-block',
 					'parent'		=> [
 						'slug'	=> 'tools.php'
-					],
-					'contact'		=> false,
-					'support'		=> false
+					]
 				]
 			] );
 		}
