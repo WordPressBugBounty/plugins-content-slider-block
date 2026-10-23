@@ -10,7 +10,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: content-slider-block
  * Requires at least: 6.5
- * Tested up to: 7.0
+ * Tested up to: 7.1
  * Requires PHP: 7.4
  * @fs_premium_only /vendor/freemius, /includes/fs.php, /includes/admin/CPT.php, includes/LicenseActivation.php, /build/admin/post.asset.php, /build/admin/post.css, /build/admin/post.js
  * @fs_free_only /vendor/freemius-lite, /includes/fs-lite.php, /includes/admin/SubMenu.php
