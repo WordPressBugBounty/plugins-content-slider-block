@@ -1,74 +1,122 @@
-=== Content Slider Block – bring your content to life with slides ===
+=== Content Slider Block – Bring your content to life with slides ===
 Contributors: bplugins, abuhayat, charlescormier, freemius
-Tags: carousel slider, image slider, image carousel, content carousel, block
-Tested up to: 7.1
-Stable tag: 3.2.1
-Requires PHP: 7.4
-Requires at least: 6.5
 Donate link: https://www.buymeacoffee.com/abuhayat
+Tags: block, carousel slider, image slider, image carousel, content carousel
+Requires at least: 6.5
+Tested up to: 7.1
+Stable tag: 3.2.2
+Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Create professional content sliders and carousels in the Gutenberg editor. Slide backgrounds, titles, buttons, autoplay, and effects – no code.
+Power up your website with the Content Slider Block plugin. Easily create professional sliders using our new block editor integration!
 
 == Description ==
 
-**Turn static pages into engaging, swipeable stories – build professional content sliders right inside the block editor, no code required.**
+👉 [Plugin Demo](https://bplugins.com/products/content-slider-block/) | [Documentation](https://bplugins.com/docs/content-slider-block/) | [Get Pro Version](https://bplugins.com/products/content-slider-block/pricing/) 👈
 
-[**Plugin Demo**](https://bplugins.com/products/content-slider-block) | [**Documentation**](https://bplugins.com/docs/content-slider-block) | [**Pricing**](https://bplugins.com/products/content-slider-block/#pricing)
+Professionally showcase your carousel slider with the Content Slider Block plugin. This plugin adds a new block in the Block Editor by which you can create a professional-looking content slider!
 
-### Why Content Slider Block?
+It is very effective in presenting your slider nicely. There are many options that you can use to decorate your carousel slider in any color you like.
 
-**Content Slider Block** adds a dedicated slider block to the Gutenberg editor so you can showcase content professionally – each slide with its own background (vibrant gradient, captivating image, or sleek color), plus a title, description, and call-to-action button.
+Customization is at the core of the Content Slider Block. With the ability to tailor each slide's background to your liking-whether it's a
+- vibrant gradient
+- captivating image
+- or sleek color palette.
 
-Customization is at the core of the plugin. Flexible typography settings let you fine-tune every text element, buttons are fully stylable with link behavior, padding, and borders, and you control exactly where content sits on each slide – you can even drag it into position. Responsive column options keep your sliders looking sharp on desktops, tablets, and phones.
+you can create a captivating visual experience that aligns perfectly with your brand identity.
 
-Advanced slider options – autoplay, loop, touch move, slide speed, and transition effects like Slide, Fade, and Creative – help you build sliders that leave a lasting impression. Whether you're a blogger, marketer, or business owner, Content Slider Block lets you tell your story your way.
+But it doesn't stop there. Each slide can be enriched with compelling content, including titles, descriptions, and actionable buttons.
 
-### Free Features
+With flexible typography settings, you have the freedom to fine-tune the appearance of text elements to ensure consistency with your website's design aesthetic.
 
-- **Flexible Slide Backgrounds:** Set a color, gradient, or image background for each slide.
-- **Rich Slide Content:** Add a title, description, and button to every slide.
-- **Typography Controls:** Set typography for the title, description, and button.
-- **Button Styling:** Specify link tab behavior, padding, and border for the button.
-- **Drag-and-Drop Content Position:** Set different positions for slide content, or simply drag it into place.
-- **Color Controls:** Different colors for slide title and description, plus button colors and hover colors.
-- **Responsive Columns:** Apply different column counts per device, with column gap, width, and height controls.
-- **Slider Options:** Loop, Touch Move, Slide Speed, and Autoplay.
-- **Transition Effects:** Slide, Fade, and Creative effects.
-- **Pagination & Navigation:** Show/hide both and configure their dynamic styles, including clickable pagination and dynamic bullets.
+Buttons, in particular, are highly customizable, allowing you to specify link behavior, padding, and border styles.
 
-### Pro Version – More Effects & Control
+Whether you want to drive conversions with bold call-to-action buttons or maintain a minimalist design approach, the options are endless.
 
-Upgrade to [**Content Slider Block Pro**](https://bplugins.com/products/content-slider-block/#pricing) for advanced slider behavior and device-level control.
+The Content Slider Block also puts you in control of content positioning, giving you the flexibility to arrange elements within slides according to your preferences.
 
-**Pro features include:**
+And with responsive design options, your sliders will look stunning on any device, ensuring a seamless user experience across desktops, tablets, and mobile devices.
 
-- **Sortable:** Reorder slides with drag and drop.
-- **Border:** Border style options on every single slide.
-- **Advanced Autoplay:** Delay time, Disable on Interaction, Reverse Direction, Pause on Mouse Enter, and Stop on Last Slide.
-- **Free Mode & Sticky:** Free Mode on drag, with a sticky option.
-- **Extra Effects:** Cube, Coverflow, Flip, and Cards.
-- **Keyboard & Mousewheel Control:** Slide with the keyboard or mousewheel.
-- **Device Visibility:** Show/hide pagination and navigation on tablet and mobile.
-- **Wrapper Styling:** Background and padding options for the slider wrapper.
-- **Shortcode:** Use your slider anywhere with a shortcode.
+But what truly sets the Content Slider Block apart are its advanced features. You can create truly captivating sliders that leave a lasting impression on your audience with
+- options for autoplay settings
+- transition effects
+- and additional effects like cube and coverflow.
 
-### How to Use Content Slider Block
+With Pro features like advanced border styles, device-specific controls, and shortcode integration, the possibilities are endless. Whether you're a blogger, marketer, or business owner, the Content Slider Block empowers you to tell your story in a way that resonates with your audience.
 
-1. Install and activate the **Content Slider Block** plugin.
-2. Open a page or post in the Gutenberg editor.
-3. Add the **Content Slider** block from the "Content Slider Block" category.
-4. Adjust slides and styles from the right-side settings sidebar.
-5. Publish – your slider is live!
 
-### Use Cases
+### Content Slider Block Features
+- Set color, gradient, or image background for each slide.
 
-- **Hero Sections:** Rotate headlines, offers, and calls to action at the top of your pages.
-- **Promotions & Campaigns:** Highlight sales and announcements with bold CTA buttons.
-- **Image Showcases:** Present photos and visuals in a swipeable carousel.
-- **Feature Highlights:** Walk visitors through product or service features slide by slide.
-- **Storytelling Pages:** Guide readers through content in a sequenced, visual way.
+- Title, Description, and Button for each slider.
+
+- Set typography for the Title, Description, and Button.
+
+- Specify link tab, padding, and border for the Button.
+
+- Set different positions for the content. Also, can drag the slide content.
+
+- Set different colors for slide title, and description. Also, set button colors and hover colors.
+
+- Apply different columns for responsive devices.
+
+- Set column gap, width, and height to set your desired layout.
+
+- Multiple Slider options such as Loop, Touch Move, Slide Speed, Autoplay
+
+- Slide, Fade, and Creative effects for the Slider.
+
+- Show/Hide the Pagination and Navigation and configure their dynamic styles.
+
+- Enable/Disable Pagination Clickable and Dynamic Bullets.
+
+
+
+### Content Slider Block Pro Features
+- **Sortable:** Sort the slides.
+
+- **Border:** Border style options in every single slide.
+
+- **Delay time:** Delay time option in autoplay.
+
+- **Disable on Interaction:** Disable on Interaction option in autoplay.
+
+- **Reverse Direction:** Reverse Direction option in autoplay.
+
+- **Pause on Mouse Enter:** Pause on Mouse Enter option in autoplay.
+
+- **Stop on Last Slide:** Stop on Last Slide option in autoplay.
+
+- **Free Mode:** Free Mode option on drag slide.
+
+- **Sticky:** Sticky option in free mode.
+
+- **Effects:** Explore more effects such as Cube, Coverflow, Flip, and Cards.
+
+- **Keyboard Control:** Slide with Keyboard control.
+
+- **Slide on Mousewheel:** Slide on Mousewheel option.
+
+- **Pagination Device:** Show/Hide pagination in different devices(tablet and mobile).
+
+- **Navigation Device:** Show/Hide navigation in different devices(tablet and mobile).
+
+- **Background:** Background style option for slider wrapper.
+
+- **Padding:** Padding style option for slider wrapper.
+
+- **Shortcode:** Shortcode option to use anywhere.
+
+
+### How to use Content Slider Block
+- First, install the Content Slider block plugin
+- Add the Content Slider block from the block category called "Content Slider Block" in the Gutenberg editor.
+- You can change block settings from the right-side settings sidebar.
+- Enjoy!
+
+* For installation help click on Installation Tab
+
 
 ### User Feedback
 
@@ -82,11 +130,14 @@ Upgrade to [**Content Slider Block Pro**](https://bplugins.com/products/content-
 
 ***-[tarekelnemrawy](https://wordpress.org/support/users/tarekelnemrawy/)***
 
-Did you like this plugin? Dislike it? Have a feature request? [Please share your feedback with us](mailto:support@bplugins.com 'Send feedback').
+
+#### - Did you like this plugin? Dislike it? Have a feature request? [Please share your feedback with us](mailto:support@bplugins.com 'Send feedback')
+
 
 ### Check out the Parent Plugin of this plugin-
 
 [**B Blocks**](https://bblockswp.com) – A blocks collection and page building tool for Gutenberg.
+
 
 ### Check out our other WordPress Plugins-
 
@@ -102,47 +153,47 @@ Did you like this plugin? Dislike it? Have a feature request? [Please share your
 
 [**Advanced Post Block**](https://bplugins.com/products/advanced-post-block/) – Show posts and custom posts in different layouts.
 
+
 == Installation ==
 
-**From your WordPress dashboard (recommended):**
+### From Gutenberg Editor:
+1. Go to the WordPress Block/Gutenberg Editor
+2. Search For **Content Slider Block**
+3. Click on the **Content Slider Block** to add the block
 
-1. Go to **Plugins → Add New**.
-2. Search for **"Content Slider Block"**.
-3. Click **Install Now**, then **Activate**.
-4. Add the **Content Slider** block to any post or page in the block editor.
+### Download & Upload:
+1. Download the **Content Slider Block** plugin (*.zip file*)
+2. In your admin area, go to the Plugins menu and click on **Add New**
+3. Click on **Upload Plugin** and choose the **`content-slider-block.zip`** file and click on **Install Now**
+4. Activate the plugin and Enjoy!
 
-**Manual installation:**
+### Manually:
+1. Download and upload the **Content Slider Block** plugin to the **`/wp-content/plugins/`** directory
+2. Activate the plugin through the Plugins menu in WordPress
 
-1. Download the **Content Slider Block** plugin (*.zip file*).
-2. In your admin area, go to **Plugins → Add New** and click **Upload Plugin**.
-3. Choose the `content-slider-block.zip` file, click **Install Now**, then **Activate**.
-4. Alternatively, upload the plugin folder to the `/wp-content/plugins/` directory and activate it through the **Plugins** menu.
 
 == Frequently Asked Questions ==
 
 = Is Content Slider Block free? =
-Yes, Content Slider Block is a free Gutenberg block plugin. A Pro version with extra effects and controls is also available.
+
+Yes, Content Slider Block is a free Gutenberg block plugin.
 
 = Does it work with any WordPress theme? =
-Yes, it works with any standard WordPress theme.
+
+Yes, it will work with any standard WordPress theme.
 
 = Can I change block settings? =
-Yes, you can change all block settings from the Gutenberg block editor's right sidebar.
 
-= How many times can I reuse the block? =
-There's no limit – you can use the block as many times as you want across your site.
+Yes, you can change block settings from the Gutenberg block editor's right sidebar.
 
-= Can I set a different background for each slide? =
-Yes. Each slide can have its own color, gradient, or image background, along with its own title, description, and button.
+= How many times can I reuse a block? =
 
-= Does the slider support autoplay and touch gestures? =
-Yes. The free version includes autoplay, loop, touch move, and slide speed options. The Pro version adds advanced autoplay controls like delay time, pause on mouse enter, and reverse direction.
-
-= Can I use the slider outside the block editor? =
-The Pro version includes a shortcode option so you can place your slider anywhere shortcodes are supported.
+You can use unlimited times as you want.
 
 = Where can I get support? =
-You can post your questions on the [support forum here](https://wordpress.org/support/plugin/content-slider-block/).
+
+You can post your questions on the [support forum here](https://wordpress.org/support/plugin/content-slider-block/)
+
 
 == Screenshots ==
 
@@ -151,35 +202,12 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 3. Image Slider
 4. All Settings
 
-== Source Code ==
-
-You can find the source code, report bugs, and contribute to the development of this plugin on our GitHub repository:
-[**Content Slider Block on GitHub**](https://github.com/bPlugins/content-slider-block-wp)
-
-== Third-Party Libraries ==
-
-This plugin bundles the following third-party JavaScript/PHP libraries.
-
-= Swiper =
-* **Source:** https://swiperjs.com/
-* **GitHub:** https://github.com/nolimits4web/swiper
-* **License:** MIT – [https://github.com/nolimits4web/swiper/blob/master/LICENSE](https://github.com/nolimits4web/swiper/blob/master/LICENSE)
-* **Purpose:** Modern touch slider used for Slider and News Ticker components.
-
-= Freemius Lite SDK =
-* **Source:** [https://bplugins.com/](https://bplugins.com/)
-* **GitHub:** [https://github.com/bPlugins/freemius-lite-sdk](https://github.com/bPlugins/freemius-lite-sdk)
-* **License:** GPL-2.0-or-later – [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
-* **Purpose:** Provides an opt-in consent form for usage tracking and analytics to help improve the plugin. No data is sent before explicit user consent.
-* **External Services:** Communicates with `api.bplugins.com` (activation events) and `wp.freemius.com` (opt-in processing) only after user opt-in. See [bPlugins Privacy Policy](https://bplugins.com/privacy-policy) and [Freemius Privacy Policy](https://freemius.com/privacy/).
-
-= bpl-tools =
-* Source / GitHub: https://github.com/bPlugins/bpl-tools
-* License: GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
-* Purpose: Shared utility library providing admin dashboard components and common Gutenberg editor controls.
-* External Services: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made
 
 == Changelog ==
+
+= 3.2.2 - 26 Oct 2026 =
+* **Security:** Fixed a stored XSS through the slide button link and style settings, reported by Patchstack
+* **Security:** Slider attributes are now sanitized on the server before they reach the page
 
 = 3.2.1 - 11 Jun 2026 =
 * **Update:** SDK
@@ -272,3 +300,33 @@ This plugin bundles the following third-party JavaScript/PHP libraries.
 
 = 1.0.0 =
 * Initial Release.
+
+
+== Source Code ==
+
+You can find the source code, report bugs, and contribute to the development of this plugin on our GitHub repository:
+[**Content Slider Block on GitHub**](https://github.com/bPlugins/content-slider-block-wp)
+
+
+== Third-Party Libraries ==
+
+This plugin bundles the following third-party JavaScript/PHP libraries.
+
+= Swiper =
+* **Source:** https://swiperjs.com/
+* **GitHub:** https://github.com/nolimits4web/swiper
+* **License:** MIT – [https://github.com/nolimits4web/swiper/blob/master/LICENSE](https://github.com/nolimits4web/swiper/blob/master/LICENSE)
+* **Purpose:** Modern touch slider used for Slider and News Ticker components.
+
+= Freemius Lite SDK =
+* **Source:** [https://bplugins.com/](https://bplugins.com/)
+* **GitHub:** [https://github.com/bPlugins/freemius-lite-sdk](https://github.com/bPlugins/freemius-lite-sdk)
+* **License:** GPL-2.0-or-later – [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
+* **Purpose:** Provides an opt-in consent form for usage tracking and analytics to help improve the plugin. No data is sent before explicit user consent.
+* **External Services:** Communicates with `api.bplugins.com` (activation events) and `wp.freemius.com` (opt-in processing) only after user opt-in. See [bPlugins Privacy Policy](https://bplugins.com/privacy-policy/) and [Freemius Privacy Policy](https://freemius.com/privacy/).
+
+= bpl-tools =
+* Source / GitHub: https://github.com/bPlugins/bpl-tools
+* License: GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
+* Purpose: Shared utility library providing admin dashboard components and common Gutenberg editor controls.
+* External Services: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made

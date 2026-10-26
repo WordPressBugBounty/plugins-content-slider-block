@@ -2,10 +2,10 @@
 /**
  * Plugin Name: Content Slider Block
  * Description: Display your goal to your visitor in bountiful way with content slider block.
- * Version: 3.2.1
+ * Version: 3.2.2
  * Author: bPlugins
  * Author URI: https://bplugins.com
- * Plugin URI: https://bplugins.com/products/content-slider-block
+ * Plugin URI: https://bplugins.com/products/content-slider-block/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: content-slider-block
@@ -23,12 +23,13 @@ if ( function_exists( 'csb_fs' ) ) {
 	csb_fs()->set_basename( true, __FILE__ );
 }else{
 	// Constant
-	define( 'CSB_VERSION', ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? time() : '3.2.1' );
+	define( 'CSB_VERSION', ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? time() : '3.2.2' );
 	define( 'CSB_DIR_URL', plugin_dir_url( __FILE__ ) );
 	define( 'CSB_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 	require_once CSB_DIR_PATH . 'includes/fs-lite.php';
 	require_once CSB_DIR_PATH . 'includes/admin/SubMenu.php';
+	require_once CSB_DIR_PATH . 'includes/Sanitizer.php';
 
 	if( !class_exists( 'CSBPlugin' ) ){
 		/**
@@ -61,9 +62,9 @@ if ( function_exists( 'csb_fs' ) ) {
 			 * Filters the default post title when creating a new page from the dashboard link.
 			 *
 			 * @since 1.0.0
-			 * @param string  $title The default post title.
-			 * @param WP_Post $post  The post object.
-			 * @return string The filtered post title.
+			 * @param string	$title	The default post title.
+			 * @param WP_Post	$post	The post object.
+			 * @return string	The filtered post title.
 			 */
 			function defaultTitle( $title, $post ) {
 				if ( 'page' === $post->post_type && isset( $_GET['title'] ) ) {
@@ -80,9 +81,9 @@ if ( function_exists( 'csb_fs' ) ) {
 			 * Filters the default post content when creating a new page from the dashboard link.
 			 *
 			 * @since 1.0.0
-			 * @param string  $content The default post content.
-			 * @param WP_Post $post    The post object.
-			 * @return string The filtered post content.
+			 * @param string	$content	The default post content.
+			 * @param WP_Post	$post		The post object.
+			 * @return string	The filtered post content.
 			 */
 			function defaultContent( $content, $post ) {
 				if ( 'page' === $post->post_type && isset( $_GET['content'] ) ) {
@@ -99,9 +100,9 @@ if ( function_exists( 'csb_fs' ) ) {
 			 * Adds action links to the plugin listing in the admin area.
 			 *
 			 * @since 1.0.0
-			 * @param array  $links An array of plugin action links.
-			 * @param string $file  Path to the plugin file relative to the plugins directory.
-			 * @return array The filtered array of plugin action links.
+			 * @param array		$links	An array of plugin action links.
+			 * @param string	$file	Path to the plugin file relative to the plugins directory.
+			 * @return array	The filtered array of plugin action links.
 			 */
 			function pluginActionLinks( $links, $file ) {
 				if( plugin_basename( __FILE__ ) === $file ) {
@@ -120,6 +121,10 @@ if ( function_exists( 'csb_fs' ) ) {
 			 */
 			function onInit(){
 				register_block_type( __DIR__ . '/build' );
+
+				// Core registers block.json scripts without a path, so local JSONs need this explicitly
+				wp_set_script_translations( 'csb-content-slider-block-editor-script', 'content-slider-block', CSB_DIR_PATH . 'languages' );
+				wp_set_script_translations( 'csb-content-slider-block-view-script', 'content-slider-block', CSB_DIR_PATH . 'languages' );
 			}
 
 			/**
@@ -132,7 +137,7 @@ if ( function_exists( 'csb_fs' ) ) {
 			function blockCategories( $categories ){
 				return array_merge( [[
 					'slug'	=> 'CSBlock',
-					'title'	=> 'Content Slider Block',
+					'title'	=> __( 'Content Slider Block', 'content-slider-block' ),
 				] ], $categories );
 			} // Categories
 
