@@ -2,17 +2,44 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Content Slider Block 3.2.2\n"
+"Project-Id-Version: Content Slider Block 3.2.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/content-slider-block\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-26T09:24:01+00:00\n"
+"POT-Creation-Date: 2026-11-16T13:11:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: content-slider-block\n"
+
+#: build/index.js:1
+msgid "Dismiss BFCM offer"
+msgstr ""
+
+#: build/index.js:1
+msgid "Dismiss"
+msgstr ""
+
+#: build/index.js:1
+#: build/admin/dashboard.js:1
+msgid "Save 45%"
+msgstr ""
+
+#: build/index.js:1
+#: build/admin/dashboard.js:1
+msgid "Unlock PRO Features →"
+msgstr ""
+
+#: build/index.js:1
+msgid "Upgrade to %s Pro"
+msgstr ""
+
+#: build/index.js:1
+#: build/admin/dashboard.js:1
+msgid "Upgrade to Pro"
+msgstr ""
 
 #. 1: Number of demos, 2: Demo category name.
 #: build/index.js:1
@@ -755,11 +782,6 @@ msgstr ""
 #: build/index.js:1
 #: build/admin/dashboard.js:1
 msgid "View Demos"
-msgstr ""
-
-#: build/index.js:1
-#: build/admin/dashboard.js:1
-msgid "Upgrade to Pro"
 msgstr ""
 
 #: build/index.js:1
@@ -2209,17 +2231,32 @@ msgstr ""
 
 #: build/index.js:1
 #: build/admin/dashboard.js:1
-msgid "Slide Through Text or Media Content"
+msgid "Select the parent block to configure layout settings in the sidebar: adjust slider height, transition effects, navigation/pagination, speed, and autoplay delay. Publish when ready."
 msgstr ""
 
 #: build/index.js:1
 #: build/admin/dashboard.js:1
-msgid "Professionally showcase your carousel slider with the Content Slider Block plugin. This plugin adds a new block in the Block Editor by which you can create a professional-looking content slider!"
+msgid "Black Friday Sale: Upgrade to Content Slider Block Pro"
+msgstr ""
+
+#: build/index.js:1
+#: build/admin/dashboard.js:1
+msgid "Get 45% off on Content Slider Block Pro this Black Friday!<br />Unlock 3D slider effects, slide sorting, advanced autoplay controls, and shortcodes."
+msgstr ""
+
+#: build/index.js:1
+#: build/admin/dashboard.js:1
+msgid "Sortable Slides"
 msgstr ""
 
 #: build/index.js:1
 #: build/admin/dashboard.js:1
 msgid "View More Changelogs"
+msgstr ""
+
+#: build/index.js:1
+#: build/admin/dashboard.js:1
+msgid "Cube, Coverflow, Flip & Cards Effects"
 msgstr ""
 
 #: build/index.js:1
@@ -2254,7 +2291,17 @@ msgstr ""
 
 #: build/index.js:1
 #: build/admin/dashboard.js:1
+msgid "Advanced Autoplay & Interaction Controls"
+msgstr ""
+
+#: build/index.js:1
+#: build/admin/dashboard.js:1
 msgid "Default, Image Background"
+msgstr ""
+
+#: build/index.js:1
+#: build/admin/dashboard.js:1
+msgid "Shortcode Integration"
 msgstr ""
 
 #: build/index.js:1
@@ -2329,6 +2376,16 @@ msgstr ""
 
 #: build/index.js:1
 #: build/admin/dashboard.js:1
+msgid "Slide Through Text or Media Content"
+msgstr ""
+
+#: build/index.js:1
+#: build/admin/dashboard.js:1
+msgid "Professionally showcase your carousel slider with the Content Slider Block plugin. This plugin adds a new block in the Block Editor by which you can create a professional-looking content slider!"
+msgstr ""
+
+#: build/index.js:1
+#: build/admin/dashboard.js:1
 msgid "Start Now"
 msgstr ""
 
@@ -2368,11 +2425,6 @@ msgid "Configure Slider & Publish"
 msgstr ""
 
 #: build/index.js:1
-#: build/admin/dashboard.js:1
-msgid "Select the parent block to configure layout settings in the sidebar: adjust slider height, transition effects, navigation/pagination, speed, and autoplay delay. Publish when ready."
-msgstr ""
-
-#: build/index.js:1
 msgid "Fade"
 msgstr ""
 
@@ -2394,7 +2446,7 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #: plugin.php
-#: plugin.php:140
+#: plugin.php:214
 msgid "Content Slider Block"
 msgstr ""
 
@@ -2426,8 +2478,12 @@ msgstr ""
 msgid "Content Slider"
 msgstr ""
 
-#: plugin.php:111
+#: plugin.php:172
 msgid "Help & Demos"
+msgstr ""
+
+#: plugin.php:183
+msgid "Upgrade to Pro & Save 45% This BFCM!"
 msgstr ""
 
 #: build/block.json

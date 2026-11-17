@@ -4,6 +4,30 @@ msgstr ""
 "X-Generator: babel-plugin-makepot\n"
 
 #: build/index.js:1
+msgid "Dismiss BFCM offer"
+msgstr ""
+
+#: build/index.js:1
+msgid "Dismiss"
+msgstr ""
+
+#: build/index.js:1
+msgid "Save 45%"
+msgstr ""
+
+#: build/index.js:1
+msgid "Unlock PRO Features →"
+msgstr ""
+
+#: build/index.js:1
+msgid "Upgrade to %s Pro"
+msgstr ""
+
+#: build/index.js:1
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: build/index.js:1
 #. 1: Number of demos, 2: Demo category name.
 msgid "<strong>%1$d</strong> demo in %2$s"
 msgid_plural "<strong>%1$d</strong> demos in %2$s"
@@ -616,10 +640,6 @@ msgstr ""
 
 #: build/index.js:1
 msgid "View Demos"
-msgstr ""
-
-#: build/index.js:1
-msgid "Upgrade to Pro"
 msgstr ""
 
 #: build/index.js:1
@@ -2059,18 +2079,32 @@ msgid "Demos"
 msgstr ""
 
 #: build/index.js:1
-msgid "Slide Through Text or Media Content"
+msgid ""
+"Select the parent block to configure layout settings in the sidebar: adjust "
+"slider height, transition effects, navigation/pagination, speed, and "
+"autoplay delay. Publish when ready."
+msgstr ""
+
+#: build/index.js:1
+msgid "Black Friday Sale: Upgrade to Content Slider Block Pro"
 msgstr ""
 
 #: build/index.js:1
 msgid ""
-"Professionally showcase your carousel slider with the Content Slider Block "
-"plugin. This plugin adds a new block in the Block Editor by which you can "
-"create a professional-looking content slider!"
+"Get 45% off on Content Slider Block Pro this Black Friday!<br />Unlock 3D "
+"slider effects, slide sorting, advanced autoplay controls, and shortcodes."
+msgstr ""
+
+#: build/index.js:1
+msgid "Sortable Slides"
 msgstr ""
 
 #: build/index.js:1
 msgid "View More Changelogs"
+msgstr ""
+
+#: build/index.js:1
+msgid "Cube, Coverflow, Flip & Cards Effects"
 msgstr ""
 
 #: build/index.js:1
@@ -2098,7 +2132,15 @@ msgid "See All Demos"
 msgstr ""
 
 #: build/index.js:1
+msgid "Advanced Autoplay & Interaction Controls"
+msgstr ""
+
+#: build/index.js:1
 msgid "Default, Image Background"
+msgstr ""
+
+#: build/index.js:1
+msgid "Shortcode Integration"
 msgstr ""
 
 #: build/index.js:1
@@ -2158,6 +2200,17 @@ msgid "Best Value"
 msgstr ""
 
 #: build/index.js:1
+msgid "Slide Through Text or Media Content"
+msgstr ""
+
+#: build/index.js:1
+msgid ""
+"Professionally showcase your carousel slider with the Content Slider Block "
+"plugin. This plugin adds a new block in the Block Editor by which you can "
+"create a professional-looking content slider!"
+msgstr ""
+
+#: build/index.js:1
 msgid "Start Now"
 msgstr ""
 
@@ -2193,13 +2246,6 @@ msgstr ""
 
 #: build/index.js:1
 msgid "Configure Slider & Publish"
-msgstr ""
-
-#: build/index.js:1
-msgid ""
-"Select the parent block to configure layout settings in the sidebar: adjust "
-"slider height, transition effects, navigation/pagination, speed, and "
-"autoplay delay. Publish when ready."
 msgstr ""
 
 #: build/index.js:1

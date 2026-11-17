@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, carousel slider, image slider, image carousel, content carousel
 Requires at least: 6.5
 Tested up to: 7.1
-Stable tag: 3.2.2
+Stable tag: 3.2.3
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -204,6 +204,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+
+= 3.2.3 - 17 Nov 2026 =
+* **Improvement:** Fix minor issues.
 
 = 3.2.2 - 26 Oct 2026 =
 * **Security:** Fixed a stored XSS through the slide button link and style settings, reported by Patchstack

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Content Slider Block
  * Description: Display your goal to your visitor in bountiful way with content slider block.
- * Version: 3.2.2
+ * Version: 3.2.3
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * Plugin URI: https://bplugins.com/products/content-slider-block/
@@ -23,7 +23,7 @@ if ( function_exists( 'csb_fs' ) ) {
 	csb_fs()->set_basename( true, __FILE__ );
 }else{
 	// Constant
-	define( 'CSB_VERSION', ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? time() : '3.2.2' );
+	define( 'CSB_VERSION', ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? time() : '3.2.3' );
 	define( 'CSB_DIR_URL', plugin_dir_url( __FILE__ ) );
 	define( 'CSB_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
@@ -54,6 +54,7 @@ if ( function_exists( 'csb_fs' ) ) {
 				add_action( 'enqueue_block_editor_assets', [$this, 'enqueueBlockEditorAssets'] );
 
 				add_filter( 'plugin_action_links', [$this, 'pluginActionLinks'], 10, 2 );
+				add_action( 'wp_ajax_csb_dismiss_bfcm_banner', [$this, 'ajaxDismissBFCM'] );
 				add_filter( 'default_title', [$this, 'defaultTitle'], 10, 2 );
 				add_filter( 'default_content', [$this, 'defaultContent'], 10, 2 );
 			}
@@ -97,6 +98,66 @@ if ( function_exists( 'csb_fs' ) ) {
 			}
 
 			/**
+			 * Checks whether the current user has dismissed the BFCM promotion in csb_options.
+			 *
+			 * @param int $user_id
+			 * @return bool
+			 */
+			public static function isBFCMPromotionDismissed( $user_id = 0 ) {
+				if ( ! $user_id ) {
+					$user_id = get_current_user_id();
+				}
+				if ( ! $user_id ) {
+					return false;
+				}
+				$options   = get_option( 'csb_options', [] );
+				$dismissed = isset( $options['bfcm_2026_dismissed'] ) && is_array( $options['bfcm_2026_dismissed'] )
+					? $options['bfcm_2026_dismissed']
+					: [];
+				return in_array( (int) $user_id, array_map( 'intval', $dismissed ), true );
+			}
+
+			/**
+			 * Records the user dismissal inside the csb_options array in wp_options.
+			 *
+			 * @param int $user_id
+			 * @return bool
+			 */
+			public static function dismissBFCMPromotion( $user_id = 0 ) {
+				if ( ! $user_id ) {
+					$user_id = get_current_user_id();
+				}
+				if ( ! $user_id ) {
+					return false;
+				}
+				$options = get_option( 'csb_options', [] );
+				if ( ! is_array( $options ) ) {
+					$options = [];
+				}
+				$dismissed = isset( $options['bfcm_2026_dismissed'] ) && is_array( $options['bfcm_2026_dismissed'] )
+					? array_map( 'intval', $options['bfcm_2026_dismissed'] )
+					: [];
+				$user_id = (int) $user_id;
+				if ( ! in_array( $user_id, $dismissed, true ) ) {
+					$dismissed[] = $user_id;
+					$options['bfcm_2026_dismissed'] = array_values( array_unique( $dismissed ) );
+					update_option( 'csb_options', $options );
+				}
+				return true;
+			}
+
+			/**
+			 * Handles AJAX request to dismiss the BFCM promotional banner.
+			 *
+			 * @return void
+			 */
+			public function ajaxDismissBFCM() {
+				check_ajax_referer( 'csb_dismiss_bfcm', 'nonce' );
+				self::dismissBFCMPromotion();
+				wp_send_json_success();
+			}
+
+			/**
 			 * Adds action links to the plugin listing in the admin area.
 			 *
 			 * @since 1.0.0
@@ -109,6 +170,19 @@ if ( function_exists( 'csb_fs' ) ) {
 					$helpDemosLink = admin_url( 'tools.php?page=content-slider-block#/welcome' );
 
 					$links['help-and-demos'] = sprintf( '<a href="%s" style="%s">%s</a>', $helpDemosLink, 'color:#FF7A00;font-weight:bold', __( 'Help & Demos', 'content-slider-block' ) );
+
+					$isExpired = time() > strtotime( '2026-12-05 23:59:59' );
+					$isPremium = function_exists( 'csb_fs' ) && csb_fs()->can_use_premium_code();
+
+					if ( ! $isExpired && ! $isPremium ) {
+						$bfcmUrl = 'https://bplugins.com/products/content-slider-block/pricing/?utm_source=admin&utm_medium=plugins&utm_campaign=bfcm2026';
+						$links['bfcm-deal'] = sprintf(
+							'<a href="%s" style="%s" target="_blank" rel="noopener noreferrer">%s</a>',
+							esc_url( $bfcmUrl ),
+							'color: #dc2626; font-weight: 700;',
+							__( 'Upgrade to Pro & Save 45% This BFCM!', 'content-slider-block' )
+						);
+					}
 				}
 	
 				return $links;
@@ -176,7 +250,13 @@ if ( function_exists( 'csb_fs' ) ) {
 					id='csbDashboard'
 					data-info='<?php echo esc_attr( wp_json_encode( [
 						'version' => CSB_VERSION,
+						'isPremium' => function_exists( 'csb_fs' ) && csb_fs()->can_use_premium_code(),
+						'isBFCMDismissed' => self::isBFCMPromotionDismissed(),
+						'dismissNonce' => wp_create_nonce( 'csb_dismiss_bfcm' ),
 						'adminUrl' => admin_url(),
+						'currentUser' => [
+							'name' => wp_get_current_user()->display_name,
+						],
 						'startUrl' => admin_url( 'post-new.php?post_type=page&title=' . rawurlencode( 'Content Slider Block' ) . '&content=' . rawurlencode( '<!-- wp:csb/content-slider-block /-->' ) . '&nonce=' . wp_create_nonce( 'csbCreatePage' ) )
 					] ) ); ?>'
 				></div>
